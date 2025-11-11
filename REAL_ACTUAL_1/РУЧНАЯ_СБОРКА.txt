@@ -1,0 +1,28 @@
+=== РУЧНАЯ СБОРКА EXE ФАЙЛОВ ===
+
+Если автоматическая сборка не работает, можете собрать вручную:
+
+1. ЧЕРЕЗ PYINSTALLER:
+   pip install pyinstaller
+   pyinstaller --onefile --windowed --name=MonOilStudy MonOilStudy_portable.py
+   pyinstaller --onefile --windowed --name=DB_Manager "DB man.py"
+
+2. ЧЕРЕЗ NUITKA:
+   pip install nuitka
+   python -m nuitka --onefile --windows-disable-console MonOilStudy_portable.py
+   python -m nuitka --onefile --windows-disable-console "DB man.py"
+
+3. ЧЕРЕЗ CX_FREEZE:
+   pip install cx_freeze
+   cxfreeze MonOilStudy_portable.py --target-dir dist_cx
+   cxfreeze "DB man.py" --target-dir dist_cx
+
+4. ЧЕРЕЗ AUTO-PY-TO-EXE (GUI):
+   pip install auto-py-to-exe
+   auto-py-to-exe
+   (выберите файлы в графическом интерфейсе)
+
+ПОСЛЕ СБОРКИ:
+- Скопируйте .exe файлы в папку MonOilStudy_Distribution
+- Скопируйте также все .db файлы и папку reports
+- Готово к использованию!
